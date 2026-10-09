@@ -1,0 +1,59 @@
+services:
+  # 1. RDBMS - Quản lý thông tin định danh & giao dịch
+  postgres:
+    image: postgres:16-alpine
+    container_name: polyglot_postgres
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: password123
+      POSTGRES_DB: core_db
+
+  # 2. Time Series DB - Lưu chỉ số biến động theo thời gian
+  influxdb:
+    image: influxdb:latest
+    container_name: polyglot_influx
+    ports:
+      - "8086:8086"
+    environment:
+      - DOCKER_INFLUXDB_INIT_MODE=setup
+      - DOCKER_INFLUXDB_INIT_USERNAME=admin
+      - DOCKER_INFLUXDB_INIT_PASSWORD=adminpassword123
+      - DOCKER_INFLUXDB_INIT_ORG=my-org
+      - DOCKER_INFLUXDB_INIT_BUCKET=sensor_data
+      - DOCKER_INFLUXDB_INIT_ADMIN_TOKEN=my-super-secret-auth-token
+
+  # 3. Graph DB - Lưu mạng lưới mối quan hệ
+  neo4j:
+    image: neo4j:latest
+    container_name: polyglot_neo4j
+    ports:
+      - "7474:7474" # Web UI
+      - "7687:7687" # Bolt protocol
+    environment:
+      - NEO4J_AUTH=neo4j/password123
+
+  # 4. OLAP DB
+  clickhouse:
+    image: clickhouse/clickhouse-server:latest
+    container_name: polyglot_clickhouse
+    ports:
+      - "8123:8123" # REST API / UI
+      - "9000:9000" # Native client
+    environment:
+      CLICKHOUSE_USER: admin
+      CLICKHOUSE_PASSWORD: password123
+      CLICKHOUSE_DEFAULT_ACCESS_MANAGEMENT: 1
+    ulimits:
+      nofile:
+        soft: 262144
+        hard: 262144
+
+  # 5. Vector DB - Lưu Embedding cho AI & Semantic Search
+  qdrant:
+    image: qdrant/qdrant:latest
+    container_name: polyglot_qdrant
+    ports:
+      - "6333:6333" # REST API & Dashboard
+      - "6334:6334" # gRPC

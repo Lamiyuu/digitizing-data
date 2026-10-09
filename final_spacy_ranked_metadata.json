@@ -1,0 +1,73 @@
+{
+  "doc_id": "merged_all_docs_game",
+  "summary_info": {
+    "file_name": "merged_all_docs_game.txt",
+    "total_words": 2398,
+    "total_chunks_processed": 8,
+    "search_tags_count": 20
+  },
+  "normalized_metadata": {
+    "timestamps_iso": [
+      "2020",
+      "2021",
+      "2022",
+      "2023",
+      "2024",
+      "2025",
+      "2025-05-20",
+      "2025-06",
+      "2025-06-02"
+    ],
+    "acronyms_and_codes": [
+      "B2B",
+      "BUILDINGANDBOOMING",
+      "FC",
+      "FPT",
+      "II",
+      "PM",
+      "PTIT",
+      "PUBG",
+      "SECC",
+      "TON",
+      "USD",
+      "VTC"
+    ],
+    "entities": {
+      "persons": [
+        "Giuseppe Stasolla",
+        "Trần Thị Thanh Hằng"
+      ],
+      "locations": [
+        "Việt Nam"
+      ],
+      "organizations": [
+        "VnExpress"
+      ]
+    }
+  },
+  "search_tags": [
+    "pm ngành",
+    "toàn cầu",
+    "tỷ usd",
+    "từ giác",
+    "đơn vị",
+    "hàn quốc",
+    "vietnam gameverse",
+    "sự kiện",
+    "nganh-game-viet-lu-giac-mo ty",
+    "việt nam",
+    "cơ hội",
+    "ngành game việt nam",
+    "hệ sinh thái",
+    "nhà đầu tư",
+    "thứ hai",
+    "lượt người",
+    "ông do",
+    "tỷ đồng",
+    "gian hàng",
+    "tín đồ"
+  ],
+  "benchmarks": {
+    "total_processing_time_ms": 3328.98
+  }
+}

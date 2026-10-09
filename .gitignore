@@ -1,0 +1,9 @@
+cat >> .gitignore <<'EOF'
+.env
+.env.*
+*.env
+myenv/
+Test Video.mp4
+car.mp4
+inference.pdiparams
+EOF
